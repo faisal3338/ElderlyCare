@@ -14,6 +14,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "707586817336-kd0qlh0oblhqc6l16imqajqkd33hba9q.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.elderlycare.elderlycare",
+            "certificate_hash": "e437cd343db560639d8949cfb79856cc76e238e8"
+          }
+        },
+        {
           "client_id": "707586817336-oh1eunsccutgc5gd0oovjs4sre72allr.apps.googleusercontent.com",
           "client_type": 3
         }
