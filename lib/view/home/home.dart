@@ -1,9 +1,15 @@
+import 'package:elderlycare/view/auth/login_screen.dart';
+import 'package:elderlycare/view/widgets/custom_button.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class Home extends StatefulWidget {
   @override
   _HomeState createState() => _HomeState();
 }
+FirebaseAuth _auth =FirebaseAuth.instance;
 class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
@@ -53,6 +59,13 @@ class _HomeState extends State<Home> {
             child: const Text('Order'),
 
           ),
+          CustomButton(
+              text: 'logout',
+              onPressed: (){
+                _auth.signOut();
+                Get.offAll(LoginScreen());
+              }
+          )
         ],
       ),
     );

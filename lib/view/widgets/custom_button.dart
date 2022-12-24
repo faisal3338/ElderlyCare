@@ -4,9 +4,12 @@ import 'package:elderlycare/view/widgets/custom_text.dart';
 class CustomButton extends StatelessWidget {
   final String text;
   final void Function()? onPressed;
+  final Color color;
   CustomButton({
     required this.text,
     required this.onPressed,
+    this.color=Colors.green,
+
   });
 
 
@@ -20,7 +23,7 @@ class CustomButton extends StatelessWidget {
         borderRadius: BorderRadius.circular(10),
       ),
       padding: EdgeInsets.all(20),
-      color: Colors.green,
+      color: color,
       child: customText(
         text: text,
         color: Colors.white,
