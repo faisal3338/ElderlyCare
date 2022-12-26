@@ -34,7 +34,9 @@ class _MapPageState extends State<MapPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        backgroundColor: Color(0xF2262254),
         appBar: AppBar(
+          backgroundColor: Color(0xF2262254),
           title: Text("Google Map Place Picker"),
         ),
         body: Center(
