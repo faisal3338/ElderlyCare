@@ -1,3 +1,4 @@
+import 'package:elderlycare/view/auth/login_phone_number.dart';
 import 'package:elderlycare/view/auth/register_screen.dart';
 import 'package:elderlycare/view_model/auth_view_model.dart';
 import 'package:flutter/cupertino.dart';
@@ -89,11 +90,11 @@ class LoginScreen extends GetWidget<AuthViewModel> {
               CustomButton(
                   text: 'SIGN IN',
                   onPressed: (){
-                    _globalKey.currentState?.save();
-                    if(_globalKey.currentState!.validate()){
-                      controller.signInWithEmailAndPassword();
-                    }
-
+                    // _globalKey.currentState?.save();
+                    // if(_globalKey.currentState!.validate()){
+                    //   controller.signInWithEmailAndPassword();
+                    // }
+                      Get.to(LoginPhoneNumber());
                   }
               ),
               SizedBox(
