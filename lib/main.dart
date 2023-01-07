@@ -1,6 +1,8 @@
 
+import 'package:elderlycare/view/appointments/appointments_screen.dart';
 import 'package:elderlycare/view/auth/login_screen.dart';
 import 'package:elderlycare/view/control_view.dart';
+import 'package:elderlycare/view_model/auth_view_model.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:get/get.dart';

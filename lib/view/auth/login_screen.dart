@@ -50,7 +50,7 @@ class LoginScreen extends GetWidget<AuthViewModel> {
                 text: 'Email',
                 hint:'Enter your Email' ,
                 onSave: (value){
-                  controller.email=value!;
+                  controller.phoneNumber=value!;
                 },
                 validator: (value){
                   if(value==null){
@@ -104,7 +104,7 @@ class LoginScreen extends GetWidget<AuthViewModel> {
               CustomButton(
                     text: 'SIGN IN  with Google',
                     onPressed: (){
-                      controller.googleSignInMethod();
+                      // controller.googleSignInMethod();
 
                     },
               ),

@@ -15,7 +15,7 @@ class AuthViewModel extends GetxController {
 
   late String email , password , name , phoneNumber;
   late var verificationId ='';
-  late var otp;
+  late var otp='';
   Rxn<User> _user= Rxn<User>();
 
   String? get user =>_user.value?.email;
@@ -30,66 +30,71 @@ class AuthViewModel extends GetxController {
 
 
 
-  void googleSignInMethod()async{
-    final GoogleSignInAccount? googleUser= await _googleSignIn.signIn();
-    if(googleUser != null){
+  // void googleSignInMethod()async{
+  //   final GoogleSignInAccount? googleUser= await _googleSignIn.signIn();
+  //   if(googleUser != null){
 
-      GoogleSignInAuthentication googleSignInAuthentication= await googleUser.authentication;
+  //     GoogleSignInAuthentication googleSignInAuthentication= await googleUser.authentication;
+  //
+  //     final AuthCredential credential=GoogleAuthProvider.credential(
+  //       idToken: googleSignInAuthentication.idToken,
+  //       accessToken: googleSignInAuthentication.accessToken,
+  //     );
+  //
+  //     // UserCredential userCredential =
+  //     await _auth.signInWithCredential(credential).then((user) async{
+  //       await FireStoreUser().addUserToFireStore(UserModel(
+  //
+  //         userId :googleUser.id,
+  //         email: googleUser.email,
+  //         name: googleUser.displayName!,
+  //         phoneNumber: '555',
+  //       )
+  //       );
+  //     });
+  //
+  //     // print(userCredential.user?.phoneNumber);
+  //     Get.offAll(Home());
+  //   }
+  //
+  //
+  // }
+  // void signInWithEmailAndPassword() async{
+  //   try{
+  //     await _auth.signInWithEmailAndPassword(email: email, password: password, );
+  //     Get.offAll(Home());
+  //   }catch(e){
+  //     Get.snackbar('Error login account', e.toString(),
+  //     colorText: Colors.black,
+  //       snackPosition: SnackPosition.BOTTOM
+  //     );
+  //   }
+  // }
 
-      final AuthCredential credential=GoogleAuthProvider.credential(
-        idToken: googleSignInAuthentication.idToken,
-        accessToken: googleSignInAuthentication.accessToken,
-      );
-
-      // UserCredential userCredential =
-      await _auth.signInWithCredential(credential).then((user) async{
-        await FireStoreUser().addUserToFireStore(UserModel(
-
-          userId :googleUser.id,
-          email: googleUser.email,
-          name: googleUser.displayName!,
-          phoneNumber: '555',
-        )
-        );
-      });
-
-      // print(userCredential.user?.phoneNumber);
-      Get.offAll(Home());
-    }
-
-
-  }
-  void signInWithEmailAndPassword() async{
-    try{
-      await _auth.signInWithEmailAndPassword(email: email, password: password, );
-      Get.offAll(Home());
-    }catch(e){
-      Get.snackbar('Error login account', e.toString(),
-      colorText: Colors.black,
-        snackPosition: SnackPosition.BOTTOM
-      );
-    }
-  }
-
-  void createAccountWithEmailAndPassword() async{
-    try{
-      await _auth.createUserWithEmailAndPassword(email: email, password: password).then((user) {
-        saveUser(user);
-      });
-      Get.offAll(Home());
-    }catch(e){
-      Get.snackbar('Error login account', e.toString(),
-          colorText: Colors.black,
-          snackPosition: SnackPosition.BOTTOM
-      );
-    }
-  }
+  // void createAccountWithEmailAndPassword() async{
+  //   try{
+  //     await _auth.createUserWithEmailAndPassword(email: email, password: password).then((user) {
+  //       saveUser(user);
+  //     });
+  //     Get.offAll(Home());
+  //   }catch(e){
+  //     Get.snackbar('Error login account', e.toString(),
+  //         colorText: Colors.black,
+  //         snackPosition: SnackPosition.BOTTOM
+  //     );
+  //   }
+  // }
   void signInWithPhoneNumber() async{
     print(phoneNumber);
    await _auth.verifyPhoneNumber(
      phoneNumber: phoneNumber,
        verificationCompleted: (AuthCredential authCredential) async{
        await _auth.signInWithCredential(authCredential);
+       //i made it for go home page
+       if (authCredential != null) {
+          saveUserA(authCredential);
+         Get.to(Home());
+       }
        },
        // verificationFailed: (e){
        // if(e.code=='invalid-phone-number'){
@@ -123,21 +128,41 @@ print(verificationId);
       ));
 
       if (credential.user != null) {
+        saveUser(credential);
         Get.to(Home());
       }
     } on Exception catch (e) {
       Get.snackbar("otp info", "otp code is not correct !!");
     }
   }
+  // void saveUser(UserCredential userCredential) async{
+  //   await FireStoreUser().addUserToFireStore(UserModel(
+  //     userId :userCredential.user!.uid,
+  //     email: email,
+  //     name: name,
+  //     phoneNumber: phoneNumber,
+  //   )
+  //   );
+  // }
   void saveUser(UserCredential userCredential) async{
     await FireStoreUser().addUserToFireStore(UserModel(
       userId :userCredential.user!.uid,
-      email: email,
       name: name,
       phoneNumber: phoneNumber,
     )
     );
   }
+  void saveUserA(AuthCredential userCredential1) async{
+
+    await FireStoreUser().addUserToFireStore(UserModel(
+      userId :_auth.currentUser!.uid,
+      name: name,
+      phoneNumber: phoneNumber,
+    )
+    );
+  }
+
+
 
 
 

@@ -109,7 +109,7 @@ class RegisterScreen extends GetView<AuthViewModel> {
                   onPressed: (){
                     _globalKey.currentState?.save();
                     if(_globalKey.currentState!.validate()){
-                      controller.createAccountWithEmailAndPassword();
+                      // controller.createAccountWithEmailAndPassword();
                     }
 
                   }

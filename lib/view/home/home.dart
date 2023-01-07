@@ -1,3 +1,4 @@
+import 'package:elderlycare/view/appointments/appointments_screen.dart';
 import 'package:elderlycare/view/auth/login_screen.dart';
 import 'package:elderlycare/view/map/maps.dart';
 import 'package:elderlycare/view/widgets/custom_button.dart';
@@ -143,7 +144,9 @@ class MyHomePage extends StatelessWidget {
                                 image: 'assets/images/Icon3.png',
                                 text: 'Order',
                                 color: Color(0xFFFD47DF),
-                                onPressed: null,
+                                onPressed: (){
+                                  Get.to(AppointmentScreen());
+                                },
                               ),
                               custom_card(
                                 image: 'assets/images/Icon4.png',

@@ -62,6 +62,7 @@ class LoginPhoneNumber extends GetWidget<AuthViewModel> {
               SizedBox(
                 height: 20,
               ),
+              
               CustomTextFormField(
                 text: 'phone number',
                 hint: 'Enter your phone number',
@@ -74,7 +75,9 @@ class LoginPhoneNumber extends GetWidget<AuthViewModel> {
                   }
                 },
               ),
-
+                SizedBox(
+                  height: 20,
+                ),
               CustomButton(
                   text: 'SIGN IN',
                   onPressed: (){
