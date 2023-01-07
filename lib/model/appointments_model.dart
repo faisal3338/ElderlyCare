@@ -1,9 +1,9 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 class AppointmentsModel {
-  late String appointmentId , time , user, Specialist ;
+  late String appointmentId , time , user, specialist ;
 
-  AppointmentsModel({required this.appointmentId, required this.time, required this.user, required this.Specialist});
+  AppointmentsModel({required this.appointmentId, required this.time, required this.user, required this.specialist});
 
 
   AppointmentsModel.fromJson(Map<dynamic,dynamic> appointmentMap){
@@ -13,7 +13,7 @@ class AppointmentsModel {
     appointmentId=appointmentMap['appointmentId'];
     time=appointmentMap['time'];
     user=appointmentMap['user'];
-    Specialist=appointmentMap['Specialist'];
+    specialist=appointmentMap['specialist'];
 
   }
   factory AppointmentsModel.fromFirestore(
@@ -25,7 +25,7 @@ class AppointmentsModel {
         appointmentId:data?['appointmentId'],
         time:data?['time'],
         user:data?['user'],
-      Specialist:data?['Specialist'],
+      specialist:data?['specialist'],
     );
   }
   toJson(){
@@ -33,7 +33,7 @@ class AppointmentsModel {
       'appointmentId':appointmentId,
       'time' :time,
       'user':user,
-      'Specialist' :Specialist,
+      'specialist' :specialist,
 
     };
   }

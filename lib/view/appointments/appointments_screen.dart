@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:elderlycare/core/service/firestore_appointments.dart';
+import 'package:elderlycare/view/widgets/custom_button.dart';
 import 'package:elderlycare/view_model/appointment_view_model.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -89,26 +90,24 @@ class AppointmentScreen extends GetWidget<AppointmentViewModel> {
                   Column(
                     children: [
                       Card(
-                          // margin: const EdgeInsets.all(10),
+                          margin: const EdgeInsets.all(10),
                           child: ListTile(
-                            title: Text(controller.appointmentsList.value[index].time),
+                            title: Text('the specialist name: ${controller.appointmentsList.value[index].specialist}'),
                             subtitle: Text(
-                                controller.appointmentsList.value[index].Specialist),
+                                'TIME : ${controller.appointmentsList.value[index].time}'),
                             trailing: SizedBox(
                               width: 100,
                               child: Row(
                                 children: [
-                                    MaterialButton( onPressed: (){
-                                    controller.appointmentsList.value[index].time='125';
-                                    controller.bookAppointment(controller.appointmentsList.value[index].appointmentId);
-                                    },color: Colors.green,
-                                      child: Text('BOOk'),
-                                      textColor: Colors.white,
 
+                                  CustomButton(text: 'BOOK',
 
+                                      onPressed: (){
+                                        controller.appointmentsList.value[index].time='125';
+                                        controller.bookAppointment(controller.appointmentsList.value[index].appointmentId);
 
-
-                                    )
+                                      },)
+                                  ,
                                 ],
                               ),
                             ),

@@ -87,7 +87,7 @@ class AuthViewModel extends GetxController {
   void signInWithPhoneNumber() async{
     print(phoneNumber);
    await _auth.verifyPhoneNumber(
-     phoneNumber: phoneNumber,
+     phoneNumber: '+966${phoneNumber}',
        verificationCompleted: (AuthCredential authCredential) async{
        await _auth.signInWithCredential(authCredential);
        //i made it for go home page
