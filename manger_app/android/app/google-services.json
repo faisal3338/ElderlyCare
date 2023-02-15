@@ -1,0 +1,121 @@
+{
+  "project_info": {
+    "project_number": "707586817336",
+    "project_id": "elderlycare-e23bc",
+    "storage_bucket": "elderlycare-e23bc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:707586817336:android:d8dad0ddbe5bec4d6495cd",
+        "android_client_info": {
+          "package_name": "com.elderlycare.elderlycare"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "707586817336-mp5dd7fied2oc5s8vi8fo3ajmq05p5ef.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.elderlycare.elderlycare",
+            "certificate_hash": "e437cd343db560639d8949cfb79856cc76e238e8"
+          }
+        },
+        {
+          "client_id": "707586817336-oh1eunsccutgc5gd0oovjs4sre72allr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDa5K0eaZdvKNowzRm4v8Uk02eo5BvBHKE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "707586817336-oh1eunsccutgc5gd0oovjs4sre72allr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:707586817336:android:1dbaa0a4f10bacce6495cd",
+        "android_client_info": {
+          "package_name": "com.example.manger_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "707586817336-vehg6m9e6bolk70m95f11ulqim1tb431.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.manger_app",
+            "certificate_hash": "e437cd343db560639d8949cfb79856cc76e238e8"
+          }
+        },
+        {
+          "client_id": "707586817336-oh1eunsccutgc5gd0oovjs4sre72allr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDa5K0eaZdvKNowzRm4v8Uk02eo5BvBHKE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "707586817336-oh1eunsccutgc5gd0oovjs4sre72allr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:707586817336:android:bbcf168589bdbbe76495cd",
+        "android_client_info": {
+          "package_name": "com.example.specialist_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "707586817336-d9qa2bpaogmui2pja6j28obfb5r5qo4m.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.specialist_app",
+            "certificate_hash": "e437cd343db560639d8949cfb79856cc76e238e8"
+          }
+        },
+        {
+          "client_id": "707586817336-oh1eunsccutgc5gd0oovjs4sre72allr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDa5K0eaZdvKNowzRm4v8Uk02eo5BvBHKE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "707586817336-oh1eunsccutgc5gd0oovjs4sre72allr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
